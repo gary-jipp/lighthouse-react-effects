@@ -6,7 +6,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h2>Data Fetching</h2>
+      <h2>React Quote</h2>
       <Quote/>
     </div>
   );
