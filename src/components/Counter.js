@@ -3,11 +3,9 @@ import { useEffect, useState } from "react";
 const Counter = function() {
   const [count, setCount] = useState(0);
 
-
   useEffect(() => {
     document.title = ` Counter = ${count}`;
-  }
-  );
+  });
 
 
   return (
