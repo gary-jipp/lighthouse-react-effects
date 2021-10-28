@@ -7,7 +7,7 @@ const Counter = function() {
   useEffect(() => {
     console.log(`setting title to ${count}`);
     document.title = ` Counter = ${count}`;
-  });
+  }, [count]);
 
   useEffect(() => {
     console.log(`creating setInterval for ${count}`);
@@ -20,7 +20,7 @@ const Counter = function() {
       clearInterval(interval);
     };
     return cleanup;
-  });
+  }, [count]);
 
 
   return (
