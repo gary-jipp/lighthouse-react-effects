@@ -14,6 +14,7 @@ const Quote = function() {
 
   return (
     <div>
+      {data.quote}
     </div>
   );
 };
