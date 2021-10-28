@@ -7,6 +7,12 @@ const Counter = function() {
     document.title = ` Counter = ${count}`;
   });
 
+  useEffect(() => {
+    setTimeout(() => {
+      console.log(`counter = ${count}`);
+    }, 3000);
+  });
+
 
   return (
     <div>
