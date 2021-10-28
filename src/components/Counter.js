@@ -8,10 +8,16 @@ const Counter = function() {
   });
 
   useEffect(() => {
-    setInterval(() => {
+    console.log(`creating setInterval for ${count}`);
+    const interval = setInterval(() => {
       console.log(`counter = ${count}`);
-    }, 2000);
-    
+    }, 1000);
+
+    const cleanup = function() {
+      console.log(`clearing setInterval for ${count}`);
+      clearInterval(interval);
+    };
+    return cleanup;
   });
 
 
