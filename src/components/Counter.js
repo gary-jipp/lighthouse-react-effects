@@ -9,6 +9,7 @@ const Counter = function() {
     document.title = ` Counter = ${count}`;
   }, [count]);
 
+  
   useEffect(() => {
     // console.log(`creating setInterval for ${count}`);
     const interval = setInterval(() => {
