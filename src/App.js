@@ -5,7 +5,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h2>Hello React World</h2>
+      <h2>React Counter</h2>
       <Counter/>
     </div>
   );
