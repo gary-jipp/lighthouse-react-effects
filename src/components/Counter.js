@@ -8,9 +8,10 @@ const Counter = function() {
   });
 
   useEffect(() => {
-    setTimeout(() => {
+    setInterval(() => {
       console.log(`counter = ${count}`);
     }, 2000);
+    
   });
 
 
