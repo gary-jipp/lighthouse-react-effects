@@ -10,13 +10,13 @@ const Counter = function() {
   });
 
   useEffect(() => {
-    console.log(`creating setInterval for ${count}`);
+    // console.log(`creating setInterval for ${count}`);
     const interval = setInterval(() => {
       console.log(`counter = ${count}`);
     }, 1000);
 
     const cleanup = function() {
-      console.log(`clearing setInterval for ${count}`);
+      // console.log(`clearing setInterval for ${count}`);
       clearInterval(interval);
     };
     return cleanup;
