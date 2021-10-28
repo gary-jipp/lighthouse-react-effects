@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const Counter = function() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   useEffect(() => {
     document.title = ` Counter = ${count}`;
@@ -10,7 +10,7 @@ const Counter = function() {
   useEffect(() => {
     setTimeout(() => {
       console.log(`counter = ${count}`);
-    }, 3000);
+    }, 2000);
   });
 
 
