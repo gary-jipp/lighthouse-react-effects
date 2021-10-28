@@ -8,6 +8,7 @@ const Counter = function() {
   });
 
   useEffect(() => {
+    console.log(`creating setInterval for ${count}`);
     setInterval(() => {
       console.log(`counter = ${count}`);
     }, 2000);
