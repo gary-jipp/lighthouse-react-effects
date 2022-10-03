@@ -1,0 +1,122 @@
+[] Rules of Hooks
+[] Pure Functions
+[] Side Effects
+[] useEffect()
+[] cleanup
+[] Data Fetching
+
+What is a Hook
+Rules of Hooks
+  - top level
+  - must only be called fmom within a React function
+  - use
+
+
+Pure Function
+  - no side effect
+  - always behaves the same (same args => same result)
+  - addFive(num)
+  - console.log is a side-effect (not guarenteed how it behaves) Affects outside world
+  - external 5 (not guarenteed again)
+  - we have lots of functions not pure in React
+
+Side Effects
+- data fetching
+- console.log
+- DOM changes outside of React
+- WebSocket connections
+- timers  & intervals
+- demo app - Simple Counter
+
+
+- useEffect() Update Title
+- document.title, title updates (document.title)
+- notice the timing (useEffect happens after render)
+- useEffect doesn't happen until the browser has painted the screen 
+- kinda like document.ready() for jQuery
+
+- another useEffect() - setTimeout
+- demonstrate inside an if!
+  - after 3000 alert(counter)
+  - look at devTools . note no name, just order
+  - multiple useState.  React knows by its order
+  - that's  why canot use if
+
+- change to setInterval
+- just console.log
+- notice more and more intervals are created,  Bad!
+- remember tweeter?  loadTweets, but didn;t clear container
+- this is kinda the smae thing happening
+
+- every render, the interval is still "active"
+- need to cleanup - we have a "leak" happening
+- setTimeout doesn't need a cleanup, only runs once
+- clearInterval(interval) - can't just do that.   (cleared before it ran)
+
+- useEffect hook returns the cleanup function - clearInterval
+- cleanup not always needed, only for things that persist
+- review logic of every render
+
+When does cleanup actually run?
+useEffect happens AFTER the browser renders the visible DOM (paint) 
+the previous useEffect cleanup happens just before the new useEffect
+
+React Render -> Display on Browser -> cleanup Effects -> run Effect
+
+Problem with this form of useEffect
+- Add an Input.  add state text, setText
+- review controlled input - needs 2 things (required)
+- 2-way binding of the input
+- common pattern, used often in React
+- notice that title changed while typing
+- and setInterval does not fire.
+- rember a change of state, renders the whole component
+- typing was faster than the interval - killed the interval
+- default behavior of useEffect - it runs on every render
+
+How to we solve this?
+- Dependancy Array
+- only runs when something changes
+- can have more than 1 item in the array
+- add counter to title and interval useEffect
+- works now, typing does not interfere
+
+******Break******
+
+- Data Fetching
+- Quotes.js
+
+- useEffect will fetch the data
+- useState will store the data
+
+- axios.get - from Promises lecture, easy to use.  Promise based
+- review how axios.works
+- just like ajax
+- res.data
+- console.log first
+- save data to state
+- watch what happens..  infinite loop
+- need a dependancy array
+- what to include.  axios, setData.  <-- are alwas the same
+- a setState function is always the same.  it never changes
+- axios of course never changes
+- don't want to depend on data os another infinte loop
+- so an empty array [] works here
+
+- how to render this?
+- the temptation is to think we render like jQuery, after the fetch
+- Remember, this is react.  Its Declarative.  Everything is based on data / state
+- the function will run again, when state changes
+- just assume its already there!
+
+- we have an error .  What is it?   data is undefined!
+- remember the component function may run several times.  1st time data is undefined.
+
+
+
+
+
+
+
+
+
