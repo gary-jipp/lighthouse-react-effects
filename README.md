@@ -1,7 +1,7 @@
 # Data Fetching and Side Effects
 
 ### Topics
-* [] Rules of Hooks
+* [] Review of Hooks
 * [] Pure Functions
 * [] Side Effects
 * [] `useEffect()`
