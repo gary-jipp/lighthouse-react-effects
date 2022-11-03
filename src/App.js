@@ -5,8 +5,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <h2>React Counter</h2>
-      <Counter/>
+      <h2>React Effects</h2>
+      <Counter />
     </div>
   );
 }
