@@ -16,7 +16,7 @@ const Quote = function() {
   return (
     <div>
       <div>
-        <button onClick={() => setCount(!count)}>+</button>
+        <button onClick={() => setCount(!count)}>Refresh</button>
       </div>
       {data.quote}
     </div>
